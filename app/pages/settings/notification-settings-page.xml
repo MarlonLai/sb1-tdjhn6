@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="ns-dark">
+    <GridLayout rows="auto,*,auto">
+        <Label row="0" text="Paramètres des notifications" class="text-xl p-4 font-bold" />
+        
+        <ScrollView row="1">
+            <StackLayout class="p-4">
+                <GridLayout rows="auto" columns="*,auto" class="mb-4">
+                    <Label col="0" text="Rappel quotidien" class="text-lg" />
+                    <Switch col="1" checked="{{ dailyReminder }}" />
+                </GridLayout>
+
+                <GridLayout rows="auto" columns="*,auto" class="mb-4">
+                    <Label col="0" text="Suggestions" class="text-lg" />
+                    <Switch col="1" checked="{{ suggestionsEnabled }}" />
+                </GridLayout>
+
+                <Label text="Heures de silence" class="text-lg mb-2" />
+                <GridLayout rows="auto" columns="*,*" class="mb-4">
+                    <TimePicker col="0" hour="{{ quietHoursStart.hour }}" minute="{{ quietHoursStart.minute }}" />
+                    <TimePicker col="1" hour="{{ quietHoursEnd.hour }}" minute="{{ quietHoursEnd.minute }}" />
+                </GridLayout>
+
+                <Button text="Tester les notifications" tap="{{ testNotification }}" 
+                        class="bg-primary text-white font-bold py-3 rounded-lg mt-4" />
+            </StackLayout>
+        </ScrollView>
+
+        <BottomNav row="2" currentTab="settings" />
+    </GridLayout>
+</Page>

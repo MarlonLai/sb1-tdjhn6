@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GridLayout rows="*" columns="*,*,*,*" height="60" class="bottom-nav">
+    <StackLayout col="0" tap="{{ onNavigateToChat }}" class="nav-item {{ currentTab === 'chat' ? 'active' : '' }}">
+        <Label text="&#xf4ac;" class="fas text-lg" />
+        <Label text="Chat" class="text-xs" />
+    </StackLayout>
+    <StackLayout col="1" tap="{{ onNavigateToVoice }}" class="nav-item {{ currentTab === 'voice' ? 'active' : '' }}">
+        <Label text="&#xf130;" class="fas text-lg" />
+        <Label text="Voix" class="text-xs" />
+    </StackLayout>
+    <StackLayout col="2" tap="{{ onNavigateToHistory }}" class="nav-item {{ currentTab === 'history' ? 'active' : '' }}">
+        <Label text="&#xf1da;" class="fas text-lg" />
+        <Label text="Historique" class="text-xs" />
+    </StackLayout>
+    <StackLayout col="3" tap="{{ onNavigateToSettings }}" class="nav-item {{ currentTab === 'settings' ? 'active' : '' }}">
+        <Label text="&#xf013;" class="fas text-lg" />
+        <Label text="Réglages" class="text-xs" />
+    </StackLayout>
+</GridLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GridLayout columns="auto,*" class="chat-bubble {{ isUser ? 'ml-12 bg-primary' : 'mr-12 bg-surface' }}">
+    <Image col="0" src="{{ avatar }}" class="w-8 h-8 rounded-full mr-2" />
+    <StackLayout col="1">
+        <Label text="{{ message }}" textWrap="true" class="text-white" />
+        <GridLayout columns="auto,auto" class="mt-1">
+            <Label col="0" text="{{ timestamp }}" class="text-xs text-gray-300" />
+            <Button col="1" text="&#xf075;" class="fas text-sm ml-2" tap="{{ onPlayVoice }}" 
+                    visibility="{{ canPlayVoice ? 'visible' : 'collapsed' }}" />
+        </GridLayout>
+    </StackLayout>
+</GridLayout>

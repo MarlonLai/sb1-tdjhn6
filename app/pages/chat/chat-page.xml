@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="ns-dark">
+    <GridLayout rows="auto,*,auto,auto">
+        <Label row="0" text="AiAssist Chat" class="text-xl p-4 font-bold" />
+        
+        <ListView row="1" items="{{ messages }}" class="chat-list">
+            <ListView.itemTemplate>
+                <GridLayout>
+                    <chat:ChatBubble message="{{ message }}" 
+                                    isUser="{{ isUser }}"
+                                    timestamp="{{ timestamp }}"
+                                    avatar="{{ avatar }}"
+                                    canPlayVoice="{{ canPlayVoice }}" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <GridLayout row="2" columns="auto,*,auto" class="p-2 bg-surface">
+            <Button col="0" text="&#xf130;" class="fas text-lg p-2" tap="{{ startVoiceInput }}" />
+            <TextField col="1" text="{{ messageText }}" hint="Tapez votre message..." 
+                      class="input-field mx-2" returnKeyType="send" />
+            <Button col="2" text="&#xf1d8;" class="fas text-lg p-2" tap="{{ sendMessage }}" />
+        </GridLayout>
+
+        <BottomNav row="3" currentTab="chat" />
+    </GridLayout>
+</Page>

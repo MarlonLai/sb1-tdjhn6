@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="ns-dark">
+    <StackLayout class="p-4">
+        <Label text="AiAssist" class="text-3xl text-center mb-8 text-secondary" />
+        
+        <TextField hint="Email" text="{{ email }}" 
+            class="input-field" keyboardType="email" />
+            
+        <TextField hint="Mot de passe" text="{{ password }}" 
+            secure="true" class="input-field" />
+            
+        <Button text="Se connecter" tap="{{ onLogin }}" 
+            class="bg-primary text-white font-bold py-3 rounded-lg mt-4" />
+            
+        <Label text="{{ errorMessage }}" 
+            class="text-red-500 text-center mt-2" 
+            visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>

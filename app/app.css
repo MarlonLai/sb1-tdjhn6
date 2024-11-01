@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom theme colors */
+.ns-root {
+  --primary: #6200EA;
+  --secondary: #00B0FF;
+  --background: #121212;
+  --surface: #1E1E1E;
+  --text: #FFFFFF;
+  --text-secondary: #B0B0B0;
+}
+
+.ns-dark {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.bottom-nav {
+  background-color: var(--surface);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item {
+  color: var(--text-secondary);
+}
+
+.nav-item.active {
+  color: var(--secondary);
+}
+
+.chat-bubble {
+  background-color: var(--primary);
+  border-radius: 16;
+  padding: 12;
+  margin: 8;
+}
+
+.input-field {
+  background-color: var(--surface);
+  border-radius: 8;
+  padding: 12;
+  color: var(--text);
+  margin: 8;
+}
